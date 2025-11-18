@@ -6,11 +6,12 @@ The simplest possible Chrome extension to block distracting websites with path-l
 
 ## Installation
 
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable "Developer mode" (toggle in top right)
-3. Click "Load unpacked"
-4. Select the `goblock` folder
-5. The extension icon should appear in your toolbar
+1. Clone this repo anywhere you'd like
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" (toggle in top right)
+4. Click "Load unpacked"
+5. Select the `goblock` repo that you cloned in step #1
+6. The extension icon should appear in your toolbar
 
 ## Usage
 

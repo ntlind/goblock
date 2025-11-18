@@ -70,17 +70,6 @@ async function blockSite() {
     const result = await chrome.storage.sync.get(["blockedSites"]);
     const blockedSites = result.blockedSites || [];
 
-    // Check if already blocked
-    if (
-      blockedSites.some(
-        (site) => site.url === normalizedUrl || site.domain === domain
-      )
-    ) {
-      alert("This site is already blocked");
-      input.value = "";
-      return;
-    }
-
     blockedSites.push({
       url: normalizedUrl,
       domain: domain,
