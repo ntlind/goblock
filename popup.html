@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>goblock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>goblock</h1>
+    
+    <div class="block-form">
+      <input type="text" id="urlInput" placeholder="Enter URL (e.g., reddit.com/r/worldnews)" />
+      <button id="blockBtn">Block</button>
+    </div>
+
+    <div class="blocked-list">
+      <h2>Blocked Sites</h2>
+      <div id="blockedSites"></div>
+      <div id="emptyState" class="empty-state">No sites blocked yet</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
+

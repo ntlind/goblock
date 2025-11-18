@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 400px;
+    min-height: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.block-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#urlInput {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#urlInput:focus {
+    border-color: #4CAF50;
+}
+
+#blockBtn {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#blockBtn:hover {
+    background: #45a049;
+}
+
+#blockBtn:active {
+    background: #3d8b40;
+}
+
+.blocked-list {
+    margin-top: 20px;
+}
+
+.blocked-list h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.blocked-item {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.blocked-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blocked-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.blocked-item-url {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.blocked-item-domain {
+    font-size: 12px;
+    color: #666;
+}
+
+.blocked-item-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.btn-pause {
+    background: #ff9800;
+    color: white;
+}
+
+.btn-pause:hover {
+    background: #f57c00;
+}
+
+.btn-unblock {
+    background: #f44336;
+    color: white;
+}
+
+.btn-unblock:hover {
+    background: #d32f2f;
+}
+
+.btn-resume {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-resume:hover {
+    background: #1976D2;
+}
+
+.paused {
+    opacity: 0.6;
+}
+
+.paused .blocked-item-url::after {
+    content: " (paused)";
+    color: #ff9800;
+    font-weight: normal;
+}

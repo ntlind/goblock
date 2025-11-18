@@ -1,0 +1,24 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#FF5252"/>
+  
+  <!-- Octagonal stop sign shape -->
+  <path d="M 42 30 L 86 30 L 98 42 L 98 86 L 86 98 L 42 98 L 30 86 L 30 42 Z" 
+        fill="#FFFFFF" 
+        stroke="#FF5252" 
+        stroke-width="3"/>
+  
+  <!-- Block/prohibition symbol (slash) -->
+  <line x1="45" y1="45" x2="83" y2="83" 
+        stroke="#FF5252" 
+        stroke-width="8" 
+        stroke-linecap="round"/>
+  
+  <!-- "GO" text at the bottom -->
+  <text x="64" y="112" 
+        font-family="Arial, sans-serif" 
+        font-size="18" 
+        font-weight="bold" 
+        fill="#FFFFFF" 
+        text-anchor="middle">GO</text>
+</svg>
