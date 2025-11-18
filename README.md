@@ -2,7 +2,7 @@
 
 The simplest possible Chrome extension to block distracting websites with path-level control. Block specific pages (like `reddit.com/r/worldnews`) without blocking the entire domain.
 
-![https://github.com/ntlind/goblock/blob/main/static/overview.png]
+![Screenshot of goblock in action](https://github.com/ntlind/goblock/blob/main/static/overview.png)
 
 ## Installation
 
