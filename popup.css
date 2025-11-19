@@ -68,9 +68,16 @@ h1 {
 
 .blocked-list h2 {
     font-size: 18px;
-    margin-bottom: 15px;
     color: #333;
 }
+
+.block-list-title-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
 
 .empty-state {
     text-align: center;
@@ -126,6 +133,12 @@ h1 {
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
+}
+
+
+.btn-pause-all {
+    background: #dddddd;
+    color: black;
 }
 
 .btn-pause {

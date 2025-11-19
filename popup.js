@@ -9,10 +9,12 @@ async function loadBlockedSites() {
 
   if (blockedSites.length === 0) {
     emptyState.style.display = "block";
+    updateToggleAllButton();
     return;
   }
 
   emptyState.style.display = "none";
+  updateToggleAllButton();
 
   blockedSites.forEach((site, index) => {
     const item = document.createElement("div");
@@ -36,6 +38,7 @@ async function loadBlockedSites() {
     container.appendChild(item);
   });
 
+  document.getElementById("toggleAllBtn").addEventListener("click", toggleAll);
   document.querySelectorAll(".btn-pause").forEach((btn) => {
     btn.addEventListener("click", () =>
       pauseBlock(parseInt(btn.dataset.index))
@@ -152,5 +155,39 @@ document.getElementById("urlInput").addEventListener("keypress", (e) => {
     blockSite();
   }
 });
+
+async function toggleAll() {
+  const result = await chrome.storage.sync.get(["blockedSites"]);
+  const blockedSites = result.blockedSites || [];
+
+  if (blockedSites.length === 0) return;
+
+  // Check if all are paused
+  const allPaused = blockedSites.every((site) => site.paused);
+
+  // Toggle: if all paused, resume all. Otherwise, pause all.
+  blockedSites.forEach((site) => {
+    site.paused = !allPaused;
+  });
+
+  await chrome.storage.sync.set({ blockedSites });
+  loadBlockedSites();
+  updateToggleAllButton();
+}
+
+async function updateToggleAllButton() {
+  const result = await chrome.storage.sync.get(["blockedSites"]);
+  const blockedSites = result.blockedSites || [];
+  const btn = document.getElementById("toggleAllBtn");
+
+  if (blockedSites.length === 0) {
+    btn.style.display = "none";
+    return;
+  }
+
+  btn.style.display = "block";
+  const allPaused = blockedSites.every((site) => site.paused);
+  btn.textContent = allPaused ? "Resume All" : "Pause All";
+}
 
 loadBlockedSites();
